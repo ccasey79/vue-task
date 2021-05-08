@@ -3,9 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vue Task</title>
+    <title>Vue - Change Image</title>
 </head>
 <body>
+
+    <div id="app">
+        <h1>{{ pageTitle }}</h1>
+        <button v-on:click="changeImage()">Change Image</button>
+        <img :src="image" alt="Landscape images" />
+    </div>
     
+
+    <script src="https://unpkg.com/vue@3.0.11"></script>
+
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return{         
+                    pageTitle: "Vue JS - Image change App", 
+                    image: 'https://cdn2.wanderlust.co.uk/media/1002/cropped-header.jpg?anchor=center&mode=crop&width=1200&height=0&rnd=131656621890000000',
+                    images: ['https://www.printique.com/wp-content/uploads/2016/10/photography-landscape-adoramapix.jpg', 'https://media.istockphoto.com/photos/mountain-peak-zugspitze-summer-day-at-lake-eibsee-near-garmisch-picture-id1042404662?k=6&m=1042404662&s=612x612&w=0&h=V-2au3bpk83ci40SkNwtJYZk1MQvQKJuZfmCgHgzk2Q=', 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/screen-shot-2018-07-11-at-5-10-02-pm-1531412351.png?crop=1.00xw:0.667xh;0,0.199xh&resize=480:*', 'https://pbs.twimg.com/media/DP5233IUEAAnJcW.jpg']        
+                }
+            },
+
+            methods:{
+                changeImage() {
+                    this.image = this.images[0];
+                }
+            }
+        })
+
+        app.mount('#app');
+
+    </script>
 </body>
 </html>
