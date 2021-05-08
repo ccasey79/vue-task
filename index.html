@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue - Change Image</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div id="app">
         <h1>{{ pageTitle }}</h1>
-        <button v-on:click="changeImage()">Change Image</button>
+        <div class="button__container">
+            <button v-on:click="changeImage()">Change Image</button>
+        </div>
         <img :src="image" alt="Landscape images" />
     </div>
     
